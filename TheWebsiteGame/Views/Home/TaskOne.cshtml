@@ -1,0 +1,17 @@
+﻿@model TaskOneViewModel
+@{
+    ViewData["Title"] = "You found the first task";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+     <div class="form-group">
+          <label asp-for="AnswerGiven"><b>2 + 2 = ?</b></label>
+          <input asp-for="AnswerGiven" class="form-control" placeholder="Answer...">
+          <span asp-validation-for="AnswerGiven" class="small text-danger"></span>      
+     </div>
+      <div class="text-center">
+           <input class="btn btn-primary" type="submit" value="Submit answer" />
+      </div>
+</form>
+
