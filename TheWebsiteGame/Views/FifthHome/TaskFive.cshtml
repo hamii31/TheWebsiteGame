@@ -1,24 +1,21 @@
-﻿@model TaskFourViewModel
+﻿@model TaskFiveViewModel
 @{
-    ViewData["Title"] = "Task Four";
-    ViewData["Title2"] = "Answer:";
+    ViewData["Title"] = "Task Five";
 }
 
-@if (TaskFourViewModel.TaskCompleted)
+@if (TaskFiveViewModel.TaskCompleted)
 {
-    <h1>@ViewData["Title2"]</h1>
     <font size="10">
-        <div>
-            @TaskFourViewModel.Answer
-        </div>
+        <p>@TaskFiveViewModel.Message</p>
     </font>
 }
 else
 {
     <h1>@ViewData["Title"]</h1>
+    <img src="@TaskFiveViewModel.ImageUrl" />
     <form method="post">
         <div class="form-group">
-            <label asp-for="AnswerGiven"><b>When were the "anti-comet" pills created?</b></label>
+            <label asp-for="AnswerGiven"><b>Have you seen this person?</b></label>
             <input asp-for="AnswerGiven" class="form-control" placeholder="Answer...">
             <span asp-validation-for="AnswerGiven" class="small text-danger"></span>
         </div>
