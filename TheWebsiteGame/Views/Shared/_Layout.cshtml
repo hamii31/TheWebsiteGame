@@ -43,6 +43,12 @@
                                  <a class="nav-link text-dark" asp-area="" asp-controller="FourthHome" asp-action="TaskFour">Do not continue</a>
                             </li>
                         }
+                        @if (TaskFourViewModel.TaskCompleted)
+                        {
+                            <li class="nav-item">
+                                 <a class="nav-link text-dark" asp-area="" asp-controller="FifthhHome" asp-action="TaskFive">You have been warned</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

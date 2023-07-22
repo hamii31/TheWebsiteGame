@@ -2,7 +2,7 @@
 {
     public class TaskTwoViewModel
     {
-        public string Answer = "guadeloupe";
+        public static string Answer = "Guadeloupe";
         public string AnswerGiven { get; set; } = null!;
         public static bool TaskCompleted = false;
     }

@@ -1,16 +1,31 @@
 ﻿@model TaskThreeViewModel
 @{
     ViewData["Title"] = "Third Task";
+    ViewData["Title2"] = "Answer:";
 }
-<h1>@ViewData["Title"]</h1>
 
-<form method="post">
-     <div class="form-group">
+@if (TaskThreeViewModel.TaskCompleted)
+{
+        <h1>@ViewData["Title2"]</h1>
+        <font size="10">
+            <div>
+            @TaskThreeViewModel.Answer
+            </div>
+        </font>
+}
+else
+{
+    <h1>@ViewData["Title"]</h1>
+    <form method="post">
+      <div class="form-group">
         <label asp-for="AnswerGiven"><b>How many carcinogenics are scientifically proven to cause cancer?</b></label>
           <input asp-for="AnswerGiven" class="form-control" placeholder="Answer...">
           <span asp-validation-for="AnswerGiven" class="small text-danger"></span>      
-     </div>
+      </div>
       <div class="text-center">
            <input class="btn btn-primary" type="submit" value="Submit answer" />
       </div>
-</form>
+    </form>
+}
+
+

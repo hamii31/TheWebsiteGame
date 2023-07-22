@@ -1,17 +1,30 @@
 ﻿@model TaskOneViewModel
 @{
     ViewData["Title"] = "You found the first task";
+    ViewData["Title2"] = "Answer:";
 }
-<h1>@ViewData["Title"]</h1>
 
-<form method="post">
-     <div class="form-group">
-          <label asp-for="AnswerGiven"><b>2 + 2 = ?</b></label>
-          <input asp-for="AnswerGiven" class="form-control" placeholder="Answer...">
-          <span asp-validation-for="AnswerGiven" class="small text-danger"></span>      
-     </div>
-      <div class="text-center">
-           <input class="btn btn-primary" type="submit" value="Submit answer" />
-      </div>
-</form>
+@if (TaskOneViewModel.TaskCompleted)
+{
+    <h1>@ViewData["Title2"]</h1>
+    <font size="10">
+        <div>
+            @TaskOneViewModel.Answer
+        </div>
+    </font>
+}
+else
+{
+    <h1>@ViewData["Title"]</h1>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="AnswerGiven"><b>2 + 2 = ?</b></label>
+            <input asp-for="AnswerGiven" class="form-control" placeholder="Answer...">
+            <span asp-validation-for="AnswerGiven" class="small text-danger"></span>
+        </div>
+        <div class="text-center">
+            <input class="btn btn-primary" type="submit" value="Submit answer" />
+        </div>
+    </form>
+}
 

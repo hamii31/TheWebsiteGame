@@ -1,5 +1,31 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model TaskThreeViewModel
 @{
+    ViewData["Title"] = "Third Task";
+    ViewData["Title2"] = "Answer:";
 }
+
+@if (TaskFourViewModel.TaskCompleted)
+{
+    <h1>@ViewData["Title2"]</h1>
+    <font size="10">
+        <div>
+            @TaskFourViewModel.Answer
+        </div>
+    </font>
+}
+else
+{
+    <h1>@ViewData["Title"]</h1>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="AnswerGiven"><b>When were the "anti-comet" pills created?</b></label>
+            <input asp-for="AnswerGiven" class="form-control" placeholder="Answer...">
+            <span asp-validation-for="AnswerGiven" class="small text-danger"></span>
+        </div>
+        <div class="text-center">
+            <input class="btn btn-primary" type="submit" value="Submit answer" />
+        </div>
+    </form>
+}
+
+

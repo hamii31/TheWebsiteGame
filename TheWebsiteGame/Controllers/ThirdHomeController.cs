@@ -12,7 +12,7 @@
         [HttpPost]
         public IActionResult TaskThree(TaskThreeViewModel model) 
         {
-            if (model.AnswerGiven != model.Answer)
+            if (model.AnswerGiven != TaskThreeViewModel.Answer)
             {
                 return View(model);
             }

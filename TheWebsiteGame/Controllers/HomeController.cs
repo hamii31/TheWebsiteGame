@@ -18,7 +18,7 @@
 		[HttpPost]
 		public IActionResult TaskOne(TaskOneViewModel model)
 		{
-			if (model.AnswerGiven != model.Answer)
+			if (model.AnswerGiven != TaskOneViewModel.Answer)
 			{
                 return View(model);
             }

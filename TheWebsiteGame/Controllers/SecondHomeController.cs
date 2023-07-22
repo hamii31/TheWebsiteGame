@@ -12,7 +12,7 @@
         [HttpPost]
         public IActionResult TaskTwo(TaskTwoViewModel model)
         {
-            if (model.AnswerGiven != model.Answer)
+            if (model.AnswerGiven.ToLower() != TaskTwoViewModel.Answer.ToLower())
             {
                 return View(model);
             }
